@@ -30,24 +30,24 @@ function buildFormMeta(data) {
 const data = {}
 
 try {
-  data.utm_source = readUTM('source');
-  data.utm_medium = readUTM('medium');
-  data.utm_campaign = readUTM('campaign');
-  data.utm_content = readUTM('content');
-  data.utm_term = readUTM('term');
+  data.u_s = readUTM('source'); // utm_source
+  data.u_m = readUTM('medium'); // utm_medium
+  data.u_ca = readUTM('campaign'); // utm_campaign
+  data.u_co = readUTM('content'); // utm_content
+  data.u_t = readUTM('term'); // utm_term
 } catch (e) {
   console.log('utm err', e);
 }
 
 try {
-  data.path = location.pathname
-  data.search = location.search
-  data.title = document.title
-  data.url = location.href
-  data.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
-  data.locale = Intl.DateTimeFormat().resolvedOptions().locale
-  data.userAgent = navigator.userAgent
-  data.corsEnabled = false
+  data.p = location.pathname; // path
+  data.s = location.search; // search
+  data.t = document.title; // title
+  data.u = location.href; // url
+  data.tz = Intl.DateTimeFormat().resolvedOptions().timeZone; // timezone
+  data.l = Intl.DateTimeFormat().resolvedOptions().locale; // locale
+  data.ua = navigator.userAgent; // userAgent
+  data.ce = false; // corsEnabled
 } catch (e) {
   console.log('Intl err', e);
 }
@@ -55,11 +55,11 @@ try {
 $.getJSON("https://api.ipify.org?format=json")
 .done(function(r) {
   if (r && r.ip) {
-    data.ip = r.ip
-    data.corsEnabled = true
+    data.i = r.ip // ip
+    data.ce = true // corsEnabled
   }
   analytics.ready(() => {
-    data.anonymousId = analytics.user().anonymousId()
+    data.ai = analytics.user().anonymousId(); // anonymousId
     buildFormMeta(data)
   })
 })
