@@ -25,6 +25,7 @@ function getParameterByName(name) {
 }
 
 function readUTM(utm_param){
+  console.log('readUTM')
   const utm_name = 'utm_' + utm_param
   return getParameterByName(utm_name) || '';
 };
@@ -50,12 +51,14 @@ $(document).ready(function() {
   } catch (e) {
     console.log('Intl err', e);
   } finally {
+    console.log('buildFormMeta from Intl', data)
     buildFormMeta(data)
   }
 
   $.getJSON("https://api.ipify.org?format=json")
   .done(function(r) {
     if (r && r.ip) {
+      console.log('buildFormMeta from ip', r)
       buildFormMeta({ ip: r.ip, corsEnabled: true })
     }
   })
