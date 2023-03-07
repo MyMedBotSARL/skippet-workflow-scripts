@@ -4,5 +4,11 @@
   "main": "src/script.js",
   "repository": "git@github.com:craigiet/skippet-workflow-scripts.git",
   "author": "Ali Ghorbani <ali@skippet.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "@segment/analytics-node": "^1.0.0-beta.23"
+  }
 }
