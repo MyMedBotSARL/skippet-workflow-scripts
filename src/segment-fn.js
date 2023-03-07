@@ -8,9 +8,6 @@
  * @param  {FunctionSettings} settings
  */
 
-const slackHookUrl =
-	'https://hooks.slack.com/services/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';
-
 const privns = uuidv5.uuidv5('null', 'skippet.com', true);
 
 function uuidv4() {
@@ -90,24 +87,6 @@ async function signupBeta(payload, body) {
 			email
 		}
 	});
-
-	// try {
-	// 	const payload = {
-	// 		text: `Signed Up - Beta waitlist:
-	//       Email: ${email}
-	//       Path: ${path}
-	//       Campaign: ${campaign.source} / ${campaign.source} / ${campaign.source}
-	//     `
-	// 	};
-	// 	response = await fetch(slackHookUrl, {
-	// 		method: 'POST',
-	// 		headers: {
-	// 			Accept: 'application/json',
-	// 			'Content-Type': 'application/json'
-	// 		},
-	// 		body: JSON.stringify(payload)
-	// 	});
-	// } catch {}
 }
 
 /** References:
