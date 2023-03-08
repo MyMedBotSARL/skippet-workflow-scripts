@@ -1,6 +1,5 @@
 // set with type="fs-cc" fs-cc-categories="marketing" attribute on script tag
 function readUTM(utm_param){
-  console.log('readUTM cookie')
   const utm_name = 'utm_' + utm_param;
   let utm_val = getParameterByName(utm_name) || '';
   if (utm_val) {
@@ -23,7 +22,6 @@ analytics.ready(() => {
   } catch (e) {
     console.log('utm err', e);
   } finally {
-    console.log('buildFormMeta from analytics', data)
     buildFormMeta(data)
   }
 })
