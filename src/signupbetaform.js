@@ -15,10 +15,6 @@ function _buildFormMeta(data) {
   })
 }
 
-for (const iterator of object) {
-  
-}
-
 function buildFormMeta(data) {
   rootFormMetaData = Object.assign({}, rootFormMetaData, data)
   _buildFormMeta(rootFormMetaData)
