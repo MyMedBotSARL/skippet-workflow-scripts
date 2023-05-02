@@ -6,7 +6,7 @@ function _buildFormMeta(data) {
     const meta64 = btoa(JSON.stringify(data)).match(/.{1,32}/g)
     for (const i in meta64) {
       const input = document.createElement('input')
-      input.setAttribute("name", `meta.${i}`)
+      input.setAttribute("name", `meta---${i}`)
       input.setAttribute("value", meta64[i])
       input.setAttribute('type', 'hidden')
       input.setAttribute('class', 'hidden-meta-data')
